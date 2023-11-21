@@ -63,7 +63,7 @@ static void SetDefaultOptions(void)
     gSaveBlock2Ptr->optionsWindowFrameType = 0;
     gSaveBlock2Ptr->optionsSound = OPTIONS_SOUND_STEREO;
     gSaveBlock2Ptr->optionsBattleStyle = OPTIONS_BATTLE_STYLE_PREDICT;
-    gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_HELP;
+    gSaveBlock2Ptr->optionsButtonMode = OPTIONS_BUTTON_MODE_LR;
     
     gSaveBlock2Ptr->optionsBattleTransitions = FALSE;
     gSaveBlock2Ptr->optionsBattleIntroAnim = 0;
@@ -112,6 +112,7 @@ void NewGameInitData(void)
 {
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
 
+    gSaveBlock1Ptr->keyFlags.version = 0;
     StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
     gDifferentSaveFile = TRUE;
     gSaveBlock2Ptr->encryptionKey = 0;
@@ -129,7 +130,7 @@ void NewGameInitData(void)
     ClearPokedexFlags();
     InitEventData();
     ResetFameChecker();
-    SetMoney(&gSaveBlock1Ptr->money, 3000);
+    SetMoney(&gSaveBlock1Ptr->money, 6000);
     ResetGameStats();
     ClearPlayerLinkBattleRecords();
     InitHeracrossSizeRecord();
