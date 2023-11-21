@@ -27,6 +27,9 @@ void HealPlayerParty(void)
     u8 i, j;
     u8 ppBonuses;
     u8 arg[4];
+    u16 maxHP;
+    u8 max_iv[1];
+    max_iv[0] = 31;
 
     if(gSaveBlock1Ptr->keyFlags.noPMC == 0 && gSaveBlock1Ptr->keyFlags.nuzlocke == 0)
     {
@@ -41,7 +44,20 @@ void HealPlayerParty(void)
     // restore HP.
     for(i = 0; i < gPlayerPartyCount; i++)
     {
-        u16 maxHP = GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP);
+        // max out IV's
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_HP_IV, max_iv);
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_ATK_IV, max_iv);
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_SPATK_IV, max_iv);
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_DEF_IV, max_iv);
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_SPDEF_IV, max_iv);
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_SPEED_IV, max_iv);
+        // max out pp bonus
+        max_iv[0] = 255;
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_PP_BONUSES, max_iv);
+        // max out friendship
+        SetBoxMonData(&gPlayerParty[i].box, MON_DATA_FRIENDSHIP, max_iv);
+
+        maxHP = GetMonData(&gPlayerParty[i], MON_DATA_MAX_HP);
         arg[0] = maxHP;
         arg[1] = maxHP >> 8;
         if(gSaveBlock1Ptr->keyFlags.nuzlocke == 1)
