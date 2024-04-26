@@ -791,7 +791,7 @@ static const struct TrainerMonNoItemDefaultMoves sTrainerMons_CooltrainerCaspara
     {
         .iv = 0,
         .lvl = 36,
-        .species = SPECIES_CHARIZARD,
+        .species = SPECIES_DRAGONAIR,
     },
     {
         .iv = 0,
@@ -810,14 +810,14 @@ static const struct TrainerMonNoItemCustomMoves sTrainerMons_CooltrainerCaspara2
     {
         .iv = 0,
         .lvl = 47,
-        .species = SPECIES_CHARIZARD,
+        .species = SPECIES_DRAGONAIR,
         .moves = {MOVE_WING_ATTACK, MOVE_SLASH, MOVE_DRAGON_RAGE, MOVE_FIRE_SPIN},
     },
     {
         .iv = 0,
         .lvl = 48,
         .species = SPECIES_GENGAR,
-        .moves = {MOVE_SHADOW_BALL, MOVE_CURSE, MOVE_CONFUSE_RAY, MOVE_NIGHT_SHADE},
+        .moves = {MOVE_SHADOW_BALL, MOVE_CURSE, MOVE_SPLASH, MOVE_NIGHT_SHADE},
     },
     {
         .iv = 0,
@@ -6460,7 +6460,7 @@ static const struct TrainerMonNoItemCustomMoves sTrainerMons_CooltrainerRolando[
     {
         .iv = 100,
         .lvl = 42,
-        .species = SPECIES_CHARIZARD,
+        .species = SPECIES_DRAGONAIR,
         .moves = {MOVE_FLAMETHROWER, MOVE_WING_ATTACK, MOVE_SMOKESCREEN, MOVE_SCARY_FACE},
     },
 };
